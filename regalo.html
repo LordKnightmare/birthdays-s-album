@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/3.3.2/aframe/build/aframe-ar.js"></script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs="sourceType: webcam;">
+      
+      <!-- MARCADOR PERSONALIZADO -->
+      <a-marker type="pattern" url="ai.patt">
+
+        <!-- CORAZÓN 3D -->
+        <a-entity 
+          position="0 0 0"
+          scale="0.8 0.8 0.8"
+          gltf-model="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Heart/glTF/Heart.gltf"
+          animation="property: rotation; to: 0 360 0; loop: true; dur: 5000">
+        </a-entity>
+
+        <!-- FRASE ROMÁNTICA -->
+        <a-entity
+          text="value: Contigo el corazón late más fuerte ❤️; color: #ff006a; width: 3;"
+          position="0 1 0"
+          rotation="-90 0 0">
+        </a-entity>
+
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
